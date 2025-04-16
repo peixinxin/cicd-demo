@@ -24,7 +24,7 @@ jobs:
         echo "Running flake8..."
         flake8
 
-    - name: Run tests
+    - name: Run tests with coverage
       run: |
-        echo "Running pytest..."
-        pytest
+        echo "Running pytest with coverage..."
+        pytest --cov=calculator --cov-report=term-missing
