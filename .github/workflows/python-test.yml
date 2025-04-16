@@ -1,6 +1,4 @@
-# .github/workflows/python-test.yml
-
-name: Python Unit Test
+name: Python CI
 
 on: [push, pull_request]
 
@@ -21,5 +19,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Run flake8 Lint
+      run: |
+        echo "Running flake8..."
+        flake8
+
     - name: Run tests
-      run: pytest
+      run: |
+        echo "Running pytest..."
+        pytest
